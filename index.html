@@ -944,7 +944,7 @@
   <section class="section" id="suflaki">
     <div class="section-inner">
       <div class="section-header reveal">
-        <h2 class="section-title">הסופלקי של שמאיה</h2>
+        <h2 class="section-title">הסופלקי שלי</h2>
         <span class="section-badge">ימי רביעי 12:30–16:30</span>
       </div>
 
@@ -985,7 +985,7 @@
         <div class="gallery">
           <div class="gallery-item"><img src="images/tali/tali-1.jpeg" alt="צלחת טאלי הודית מסורתית" loading="lazy"></div>
           <div class="gallery-item"><img src="images/tali/tali-2.jpeg" alt="קערות תוספות הודיות" loading="lazy"></div>
-          <div class="gallery-item"><img src="images/tali/tali-3.jpeg" alt="שמאיה מכינה טאלי" loading="lazy"></div>
+          <div class="gallery-item"><img src="images/tali/tali-3.jpeg" alt="אני מכינה טאלי" loading="lazy"></div>
           <div class="gallery-item"><img src="images/tali/tali-4.jpeg" alt="תוספות וסלטים" loading="lazy"></div>
           <div class="gallery-item"><img src="images/tali/tali-5.jpeg" alt="אורחים נהנים בחצר" loading="lazy"></div>
           <div class="gallery-item"><img src="images/tali/tali-6.jpeg" alt="מגש מנות טעימות" loading="lazy"></div>
@@ -1021,9 +1021,9 @@
       <div class="feature-card reveal reveal-delay-1">
         <span class="feature-icon">🍽️</span>
         <p class="section-text">
-          מגיעים לחצר סיורים קולינריים מכל הארץ לטעום מהאוכל המיוחד שלנו.
+          מגיע לחצר סיורים קולינריים מכל הארץ לטעום מהאוכל המיוחד שלנו.
           <br>
-          אפשר גם להזמין אותנו אליכם!
+          אפשר גם להזמין אותי אליכם!
         </p>
       </div>
     </div>
@@ -1044,8 +1044,8 @@
 
       <div class="gallery-wrapper reveal reveal-delay-1" data-gallery>
         <div class="gallery">
-          <div class="gallery-item"><img src="images/forest/forest-1.jpeg" alt="שמאיה בטיול יער" loading="lazy"></div>
-          <div class="gallery-item"><img src="images/forest/forest-2.jpeg" alt="שמאיה ביער" loading="lazy"></div>
+          <div class="gallery-item"><img src="images/forest/forest-1.jpeg" alt="אני בטיול יער" loading="lazy"></div>
+          <div class="gallery-item"><img src="images/forest/forest-2.jpeg" alt="אני ביער" loading="lazy"></div>
           <div class="gallery-item"><img src="images/forest/forest-3.jpeg" alt="מדיטציה ביער בשקיעה" loading="lazy"></div>
         </div>
         <div class="gallery-dots"></div>
@@ -1060,7 +1060,7 @@
       <p class="section-text reveal reveal-delay-3">
         שנים של חקירת תנועה, חיבור לגוף, לנשימה וליער.
         <br>
-        שמאיה מכירה פינות מיוחדות ביערות שבאזור, את הצמחים שגדלים מסביב — ויודעת להכין מהם מטעמים.
+        אני מכירה פינות מיוחדות ביערות שבאזור, את הצמחים שגדלים מסביב — ויודעת להכין מהם מטעמים.
       </p>
     </div>
   </section>
@@ -1080,7 +1080,7 @@
 
       <div class="gallery-wrapper reveal reveal-delay-1" data-gallery>
         <div class="gallery">
-          <div class="gallery-item"><img src="images/CompanyEvents/events-1.jpeg" alt="שמאיה מכינה שולחן לאירוע" loading="lazy"></div>
+          <div class="gallery-item"><img src="images/CompanyEvents/events-1.jpeg" alt="אני מכינה שולחן לאירוע" loading="lazy"></div>
         </div>
       </div>
 
@@ -1088,8 +1088,8 @@
         ערבים מיוחדים של אוכל, תוכן ושמחה — לאירועי חברה, ערבי נשים, ערבי קונספט ועוד.
       </p>
       <p class="section-text reveal reveal-delay-2">
-        שמאיה מכינה שולחן בופה עם ממרחים, לחמי כוסמין, מרקים, מאפים וסלטים.
-        מוסיקה טובה ברקע, שיח חוויתי עם כלים פרקטיים לחיים טובים יותר, משחקי חברה ושירים משמחי לבב ששמאיה כתבה.
+        אני מכינה שולחן בופה עם ממרחים, לחמי כוסמין, מרקים, מאפים וסלטים.
+        מוסיקה טובה ברקע, שיח חוויתי עם כלים פרקטיים לחיים טובים יותר, משחקי חברה ושירים משמחי לבב שאני כתבתי.
       </p>
       <p class="section-text reveal reveal-delay-3">
         לקראת הסוף — תנועה שמחברת לגוף, ולקינוח — תה ומתוק.
@@ -1204,6 +1204,9 @@
     // Scroll to top on page load/reload
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
+    }
+    if (window.location.hash) {
+      history.replaceState(null, '', window.location.pathname);
     }
     window.scrollTo(0, 0);
 
