@@ -482,21 +482,24 @@
 
     /* ===== Lightbox ===== */
     .lightbox {
-      display: none;
       position: fixed;
       inset: 0;
       z-index: 200;
       background: rgba(0, 0, 0, 0.9);
+      display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       opacity: 0;
-      transition: opacity 0.3s ease;
+      pointer-events: none;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
     }
 
     .lightbox.active {
-      display: flex;
       opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
     }
 
     .lightbox img {
