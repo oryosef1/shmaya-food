@@ -527,6 +527,118 @@
       margin-bottom: 0;
     }
 
+    .feature-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-brown);
+      margin-bottom: 12px;
+    }
+
+    /* ===== Highlights Row ===== */
+    .highlights-row {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin: 0 auto 40px;
+      max-width: 800px;
+    }
+
+    .highlight-card {
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 24px 20px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      flex: 1;
+      min-width: 150px;
+      max-width: 200px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .highlight-icon {
+      font-size: 2rem;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .highlight-label {
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      margin-bottom: 4px;
+    }
+
+    .highlight-value {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-brown);
+    }
+
+    /* ===== FAQ Accordion ===== */
+    .faq-list {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(196, 114, 78, 0.12);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 20px 0;
+      font-family: var(--font);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-brown);
+      text-align: right;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      transition: color 0.2s ease;
+    }
+
+    .faq-question:hover {
+      color: var(--color-terracotta);
+    }
+
+    .faq-arrow {
+      font-size: 0.8rem;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      color: var(--color-terracotta);
+    }
+
+    .faq-item.open .faq-arrow {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 200px;
+    }
+
+    .faq-answer p {
+      padding: 0 0 20px;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--color-text-light);
+    }
+
     /* ===== Hours Table ===== */
     .hours-grid {
       display: grid;
@@ -870,6 +982,21 @@
         width: 50px;
         height: 50px;
       }
+
+      .highlights-row {
+        gap: 12px;
+        margin-top: -24px !important;
+        padding: 0 16px;
+      }
+
+      .highlight-card {
+        min-width: 130px;
+        padding: 16px 12px;
+      }
+
+      .faq-question {
+        font-size: 1rem;
+      }
     }
 
     @media (min-width: 769px) {
@@ -921,6 +1048,7 @@
         <li><a href="#forest">טיולי יער</a></li>
         <li><a href="#events">אירועי חברה</a></li>
         <li><a href="#hours">שעות פעילות</a></li>
+        <li><a href="#faq">שאלות נפוצות</a></li>
         <li><a href="#contact">צרו קשר</a></li>
       </ul>
     </div>
@@ -931,9 +1059,33 @@
     <img src="images/business/logo.jpeg" alt="שמאיה עושה לכם טעים - לוגו" class="hero-logo" loading="eager">
     <h1>שמאיה עושה לכם טעים</h1>
     <p class="hero-subtitle">אוכל ביתי, חוויות וטבע | פרדס חנה</p>
-    <a href="#suflaki" class="hero-cta">גלו את התפריט שלנו</a>
+    <a href="#suflaki" class="hero-cta">בואו לטעום</a>
     <div class="hero-scroll-hint"><span></span></div>
   </section>
+
+  <!-- Highlights -->
+  <div class="highlights-row" style="margin-top: -40px; position: relative; z-index: 2;">
+    <div class="highlight-card reveal">
+      <span class="highlight-icon">🥙</span>
+      <div class="highlight-label">סופלקי</div>
+      <div class="highlight-value">ימי רביעי</div>
+    </div>
+    <div class="highlight-card reveal reveal-delay-1">
+      <span class="highlight-icon">🍛</span>
+      <div class="highlight-label">טאלי הודית</div>
+      <div class="highlight-value">ימי שישי</div>
+    </div>
+    <div class="highlight-card reveal reveal-delay-2">
+      <span class="highlight-icon">🌿</span>
+      <div class="highlight-label">טיולי יער</div>
+      <div class="highlight-value">בתיאום מראש</div>
+    </div>
+    <div class="highlight-card reveal reveal-delay-3">
+      <span class="highlight-icon">📍</span>
+      <div class="highlight-label">מיקום</div>
+      <div class="highlight-value">פרדס חנה</div>
+    </div>
+  </div>
 
   <!-- Divider -->
   <div class="section-divider" style="background: var(--color-cream);">
@@ -1024,7 +1176,7 @@
       <div class="feature-card reveal reveal-delay-1">
         <span class="feature-icon">🍽️</span>
         <p class="section-text">
-          אפשר להגיע למסע קולינרי בחצר, או להזמין סיור באזור פרדס חנה שמפתיע באוכל הטעים שנמצא בכל פינה.
+          אפשר להגיע למסע קולינרי בחצר.
         </p>
       </div>
 
@@ -1201,6 +1353,72 @@
     </div>
   </section>
 
+  <!-- FAQ Section -->
+  <section class="section section-alt" id="faq">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <h2 class="section-title">שאלות נפוצות</h2>
+      </div>
+
+      <div class="faq-list reveal reveal-delay-1">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>האם האוכל כשר?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>כן, כל האוכל כשר. יש אפשרויות טבעוניות, צמחוניות ובשריות.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>יש אפשרות לאנשים עם רגישויות למזון?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>בוודאי! אפשר להתאים מנות ללא גלוטן, טבעוני ועוד. ספרו לנו מראש ונדאג להכל.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>צריך להזמין מקום מראש?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>לסופלקי ולטאלי אפשר להגיע בשעות הפעילות. לסיורים, טיולי יער ואירועים — יש לתאם מראש דרך וואטסאפ.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>איך מגיעים?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>חרובים 3, פרדס חנה. אפשר לנווט בקלות דרך Waze — יש חניה זמינה באזור.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>אפשר להזמין לאירוע פרטי?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>כן! אפשר להזמין אותנו לאירועי חברה, ערבי נשים, ימי הולדת ועוד. שלחו הודעה בוואטסאפ ונתאם.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>מתאים לילדים?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>בהחלט! הסופלקי והטאלי מתאימים לכל המשפחה. טיולי היער מתאימים לילדים מגיל 6 ומעלה.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="footer">
     <p class="footer-brand">שמאיה עושה לכם טעים</p>
@@ -1328,6 +1546,16 @@
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeLightbox();
+    });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
     });
   </script>
 </body>
