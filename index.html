@@ -64,6 +64,10 @@
       -webkit-touch-callout: none;
     }
 
+    a, button {
+      touch-action: manipulation;
+    }
+
     a:focus, button:focus {
       outline: none;
     }
@@ -202,7 +206,8 @@
       border-radius: 50px;
       font-size: 1.05rem;
       font-weight: 500;
-      transition: all 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      -webkit-mask-image: -webkit-radial-gradient(white, black);
       box-shadow: 0 4px 16px rgba(196, 114, 78, 0.3);
     }
 
@@ -427,13 +432,11 @@
       text-decoration: none;
       font-size: 1rem;
       font-weight: 500;
-      transition: all 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
       box-shadow: var(--shadow-sm);
-    }
-
-    .contact-btn {
       user-select: none;
       -webkit-user-select: none;
+      -webkit-mask-image: -webkit-radial-gradient(white, black);
     }
 
     .contact-btn .btn-icon {
@@ -453,6 +456,10 @@
       box-shadow: var(--shadow-md);
     }
 
+    .btn-waze:active {
+      background: #21b8eb;
+    }
+
     .btn-whatsapp {
       background: #25D366;
       color: white;
@@ -462,6 +469,10 @@
       background: #1fb855;
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
+    }
+
+    .btn-whatsapp:active {
+      background: #1fb855;
     }
 
     .btn-instagram {
@@ -475,6 +486,10 @@
       box-shadow: var(--shadow-md);
     }
 
+    .btn-instagram:active {
+      opacity: 0.85;
+    }
+
     .btn-facebook {
       background: #1877F2;
       color: white;
@@ -484,6 +499,10 @@
       background: #1466d8;
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
+    }
+
+    .btn-facebook:active {
+      background: #1466d8;
     }
 
     /* ===== Footer ===== */
@@ -874,6 +893,9 @@
   </div>
 
   <script>
+    // Enable :active styles on iOS Safari
+    document.addEventListener('touchstart', function() {}, {passive: true});
+
     // Navigation toggle (mobile)
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
