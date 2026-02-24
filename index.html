@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>שמאיה עושה לכם טעים | אוכל ביתי בפרדס חנה</title>
+  <meta name="description" content="שמאיה עושה לכם טעים - טאלי הודית, סופלקי, טיולי יער ואירועי חברה בפרדס חנה">
+  <meta property="og:title" content="שמאיה עושה לכם טעים">
+  <meta property="og:description" content="אוכל ביתי מדהים בפרדס חנה - טאלי הודית, סופלקי, טיולי יער ואירועי חברה">
+  <meta property="og:image" content="images/business/logo.jpeg">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --color-cream: #FFF8F0;
+      --color-warm-white: #FFFDF9;
+      --color-sand: #F5E6D3;
+      --color-terracotta: #C4724E;
+      --color-terracotta-dark: #A85A3A;
+      --color-olive: #6B7B4C;
+      --color-olive-dark: #556340;
+      --color-olive-light: #8A9B6A;
+      --color-brown: #5C4033;
+      --color-brown-light: #7A5C4F;
+      --color-gold: #D4A853;
+      --color-gold-light: #E8C97A;
+      --color-text: #3B2F2F;
+      --color-text-light: #6B5E5E;
+      --color-bg-section: #FFFDF9;
+      --color-bg-alt: #FBF5ED;
+      --shadow-sm: 0 2px 8px rgba(92, 64, 51, 0.08);
+      --shadow-md: 0 4px 20px rgba(92, 64, 51, 0.12);
+      --shadow-lg: 0 8px 40px rgba(92, 64, 51, 0.16);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --font: 'Heebo', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--color-cream);
+      color: var(--color-text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== Navigation ===== */
+    .nav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 100;
+      background: rgba(255, 248, 240, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(196, 114, 78, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .nav.scrolled {
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--color-terracotta);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--color-text);
+      font-size: 0.9rem;
+      font-weight: 400;
+      padding: 6px 12px;
+      border-radius: 20px;
+      transition: all 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background: var(--color-sand);
+      color: var(--color-terracotta);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--color-text);
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 20px 60px;
+      background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-sand) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(196, 114, 78, 0.06) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-logo {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 32px;
+      border: 4px solid rgba(255, 255, 255, 0.8);
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--color-terracotta);
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--color-text-light);
+      font-weight: 300;
+      margin-bottom: 40px;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--color-terracotta);
+      color: white;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-size: 1.05rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 16px rgba(196, 114, 78, 0.3);
+    }
+
+    .hero-cta:hover {
+      background: var(--color-terracotta-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(196, 114, 78, 0.4);
+    }
+
+    /* ===== Section Common ===== */
+    .section {
+      padding: 80px 20px;
+    }
+
+    .section-alt {
+      background: var(--color-bg-alt);
+    }
+
+    .section-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--color-brown);
+      margin-bottom: 8px;
+    }
+
+    .section-badge {
+      display: inline-block;
+      background: var(--color-olive);
+      color: white;
+      padding: 4px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .section-text {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: var(--color-text);
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 32px;
+    }
+
+    .section-story {
+      background: var(--color-warm-white);
+      border-right: 4px solid var(--color-gold);
+      padding: 24px 28px;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 32px auto 0;
+      max-width: 650px;
+      font-size: 1rem;
+      color: var(--color-text-light);
+      line-height: 1.8;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .section-story strong {
+      color: var(--color-terracotta);
+    }
+
+    /* ===== Gallery ===== */
+    .gallery {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 8px 0 20px;
+      margin: 0 -20px;
+      padding-right: 20px;
+      padding-left: 20px;
+      scrollbar-width: none;
+    }
+
+    .gallery::-webkit-scrollbar {
+      display: none;
+    }
+
+    .gallery-item {
+      flex: 0 0 auto;
+      width: 300px;
+      height: 360px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      scroll-snap-align: center;
+      cursor: pointer;
+      position: relative;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.02);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* ===== Feature Cards (for sections without images) ===== */
+    .feature-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 48px 36px;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      max-width: 650px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 4px;
+      background: linear-gradient(to left, var(--color-terracotta), var(--color-gold));
+    }
+
+    .feature-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .feature-card .section-text {
+      margin-bottom: 0;
+    }
+
+    /* ===== Hours Table ===== */
+    .hours-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hours-card {
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid rgba(196, 114, 78, 0.08);
+    }
+
+    .hours-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .hours-card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-brown);
+      margin-bottom: 8px;
+    }
+
+    .hours-card-day {
+      font-size: 0.95rem;
+      color: var(--color-terracotta);
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .hours-card-time {
+      font-size: 0.9rem;
+      color: var(--color-text-light);
+    }
+
+    /* ===== Contact ===== */
+    .contact-content {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-address {
+      font-size: 1.2rem;
+      color: var(--color-text);
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-btn svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .btn-waze {
+      background: #33CCFF;
+      color: white;
+    }
+
+    .btn-waze:hover {
+      background: #21b8eb;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    .btn-whatsapp:hover {
+      background: #1fb855;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-instagram {
+      background: linear-gradient(135deg, #833AB4, #E1306C, #F77737);
+      color: white;
+    }
+
+    .btn-instagram:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-facebook {
+      background: #1877F2;
+      color: white;
+    }
+
+    .btn-facebook:hover {
+      background: #1466d8;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      text-align: center;
+      padding: 32px 20px;
+      background: var(--color-brown);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.85rem;
+    }
+
+    /* ===== Lightbox ===== */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(0, 0, 0, 0.9);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .lightbox.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: var(--radius-sm);
+      box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 44px;
+      height: 44px;
+      border: none;
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      font-size: 1.5rem;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    /* ===== Mobile Responsive ===== */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        left: 0;
+        background: rgba(255, 248, 240, 0.98);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        padding: 16px 20px;
+        gap: 4px;
+        border-bottom: 1px solid rgba(196, 114, 78, 0.1);
+        box-shadow: var(--shadow-md);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 12px 16px;
+        font-size: 1rem;
+        border-radius: var(--radius-sm);
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-toggle.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .nav-toggle.open span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .nav-toggle.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 100px 20px 60px;
+      }
+
+      .hero-logo {
+        width: 200px;
+        height: 200px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.05rem;
+      }
+
+      .section {
+        padding: 60px 20px;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .section-text {
+        font-size: 1rem;
+      }
+
+      .gallery-item {
+        width: 260px;
+        height: 300px;
+      }
+
+      .feature-card {
+        padding: 36px 24px;
+      }
+
+      .contact-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .hero-logo {
+        width: 320px;
+        height: 320px;
+      }
+
+      .hero h1 {
+        font-size: 3.2rem;
+      }
+
+      .gallery {
+        justify-content: center;
+        flex-wrap: wrap;
+        overflow-x: visible;
+        scroll-snap-type: none;
+        margin: 0;
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      .gallery-item {
+        width: 280px;
+        height: 340px;
+        scroll-snap-align: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <span class="nav-brand">שמאיה עושה לכם טעים</span>
+      <button class="nav-toggle" id="navToggle" aria-label="תפריט">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#tali">טאלי</a></li>
+        <li><a href="#suflaki">סופלקי</a></li>
+        <li><a href="#forest">טיולי יער</a></li>
+        <li><a href="#events">אירועי חברה</a></li>
+        <li><a href="#hours">שעות פעילות</a></li>
+        <li><a href="#contact">צרו קשר</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <img src="images/business/logo.jpeg" alt="שמאיה עושה לכם טעים - לוגו" class="hero-logo" loading="eager">
+    <h1>שמאיה עושה לכם טעים</h1>
+    <p class="hero-subtitle">אוכל ביתי, חוויות וטבע | פרדס חנה</p>
+    <a href="#tali" class="hero-cta">גלו את התפריט שלנו</a>
+  </section>
+
+  <!-- Tali Section -->
+  <section class="section" id="tali">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title">טאלי הודית מסורתית</h2>
+        <span class="section-badge">ימי שישי בצהריים</span>
+      </div>
+
+      <div class="gallery">
+        <div class="gallery-item"><img src="images/tali/tali-1.jpeg" alt="צלחת טאלי הודית מסורתית" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/tali/tali-2.jpeg" alt="קערות תוספות הודיות" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/tali/tali-3.jpeg" alt="שמאיה מכינה טאלי" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/tali/tali-4.jpeg" alt="תוספות וסלטים" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/tali/tali-5.jpeg" alt="אורחים נהנים בחצר" loading="lazy"></div>
+      </div>
+
+      <p class="section-text">
+        מנה מגוונת, מפנקת וטעימה במיוחד — גם למי שלא אוהב אוכל הודי.
+        <br>
+        מוגשת גם כמנת טעימות עם גרליק נאן או דוסה, לצד צ׳אי תבלינים חם וטעים.
+      </p>
+
+      <div class="section-story">
+        <strong>הסיפור שלי:</strong> לפני שנים טיילתי באיי אנדמן והתאהבתי במקום ובנער הודי מקומי. כמעט שהתחתנו — הוא בנה לי בית במבוק על העץ, ושם למדתי לבשל אוכל מסורתי מהיסוד.
+      </div>
+    </div>
+  </section>
+
+  <!-- Suflaki Section -->
+  <section class="section section-alt" id="suflaki">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title">הסופלקי של שמאיה</h2>
+        <span class="section-badge">ימי רביעי 12:30–16:30</span>
+      </div>
+
+      <div class="gallery">
+        <div class="gallery-item"><img src="images/suflaki/suflaki-1.jpeg" alt="סופלקי עם רוטב" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/suflaki/suflaki-2.jpeg" alt="מגש סופלקי" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/suflaki/suflaki-3.jpeg" alt="סופלקי מקרוב" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/suflaki/suflaki-4.jpeg" alt="סופלקי ביד" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/suflaki/suflaki-5.jpeg" alt="סופלקי עם עוף" loading="lazy"></div>
+      </div>
+
+      <p class="section-text">
+        מאכל יווני שעבר מהפך — הרבה יותר טעים ממה שאפשר לדמיין.
+        <br>
+        מנה איכותית וממכרת שמתאימה לכולם: טבעוני, בשרי, ללא גלוטן, כוסמין, גם בצלחת עם אורז וסלט — והכל כשר.
+        <br>
+        מרכיבים שנבחרו בקפידה, עד לתוצאה הסופית ולביס המושלם.
+      </p>
+    </div>
+  </section>
+
+  <!-- Forest Walks Section -->
+  <section class="section" id="forest">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title">טיולי יער</h2>
+        <span class="section-badge">בתיאום מראש</span>
+      </div>
+
+      <div class="feature-card">
+        <span class="feature-icon">🌿</span>
+        <p class="section-text">
+          שנים של חקירת תנועה, חיבור לגוף, לנשימה וליער.
+          <br>
+          שמאיה מכירה פינות מיוחדות ביערות שבאזור, את הצמחים שגדלים מסביב — ויודעת להכין מהם מטעמים.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Events Section -->
+  <section class="section section-alt" id="events">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title">אירועי חברה</h2>
+        <span class="section-badge">בתיאום מראש</span>
+      </div>
+
+      <div class="feature-card">
+        <span class="feature-icon">🎉</span>
+        <p class="section-text">
+          ערבים מיוחדים של אוכל, תוכן ושמחה — לאירועי חברה, ערבי נשים ועוד.
+        </p>
+        <p class="section-text">
+          שמאיה מכינה שולחן בופה עם ממרחים, לחמי כוסמין, מרקים, מאפים וסלטים.
+          מוסיקה טובה ברקע, שיח חוויתי עם כלים פרקטיים לחיים טובים יותר, משחקי חברה ושירים משמחי לבב ששמאיה כתבה.
+        </p>
+        <p class="section-text">
+          לקראת הסוף — תנועה שמחברת לגוף, ולקינוח — תה ומתוק.
+          <br>
+          ערב כייפי שמעלה את השמחה ומחבר לחוויית חיים מלאה.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hours Section -->
+  <section class="section" id="hours">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title">שעות פעילות</h2>
+      </div>
+
+      <div class="hours-grid">
+        <div class="hours-card">
+          <div class="hours-card-title">טאלי הודית</div>
+          <div class="hours-card-day">ימי שישי</div>
+          <div class="hours-card-time">בצהריים</div>
+        </div>
+        <div class="hours-card">
+          <div class="hours-card-title">סופלקי</div>
+          <div class="hours-card-day">ימי רביעי</div>
+          <div class="hours-card-time">12:30–16:30</div>
+        </div>
+        <div class="hours-card">
+          <div class="hours-card-title">טיולי יער</div>
+          <div class="hours-card-day">בתיאום מראש</div>
+          <div class="hours-card-time">צרו קשר לפרטים</div>
+        </div>
+        <div class="hours-card">
+          <div class="hours-card-title">אירועי חברה</div>
+          <div class="hours-card-day">בתיאום מראש</div>
+          <div class="hours-card-time">צרו קשר לפרטים</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section section-alt" id="contact">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title">צרו קשר</h2>
+      </div>
+
+      <div class="contact-content">
+        <p class="contact-address">חרובים 3, פרדס חנה</p>
+
+        <div class="contact-buttons">
+          <a href="https://waze.com/ul?q=%D7%97%D7%A8%D7%95%D7%91%D7%99%D7%9D%203%20%D7%A4%D7%A8%D7%93%D7%A1%20%D7%97%D7%A0%D7%94" target="_blank" rel="noopener" class="contact-btn btn-waze">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.54 6.63A8.99 8.99 0 0 0 12.04 2C6.5 2 2.04 6.46 2.04 12c0 2.21.72 4.26 1.93 5.92L2.04 22l4.13-1.83A9.94 9.94 0 0 0 12.04 22c5.54 0 10-4.46 10-10 0-2.54-.94-4.93-2.5-6.73V6.63zM9 10.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm6 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3.5 3.5c-.73 2.64-3.08 4.5-6.5 4.5s-5.77-1.86-6.5-4.5h13z"/></svg>
+            נווטו אלינו ב-Waze
+          </a>
+          <a href="https://wa.me/972556607023" target="_blank" rel="noopener" class="contact-btn btn-whatsapp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            שלחו הודעה בוואטסאפ
+          </a>
+          <a href="https://www.instagram.com/shmayhshdh" target="_blank" rel="noopener" class="contact-btn btn-instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            עקבו באינסטגרם
+          </a>
+          <a href="https://www.facebook.com/perelman.hila/" target="_blank" rel="noopener" class="contact-btn btn-facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            עקבו בפייסבוק
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>שמאיה עושה לכם טעים &copy; 2026 | חרובים 3, פרדס חנה</p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="סגור">&times;</button>
+    <img src="" alt="">
+  </div>
+
+  <script>
+    // Navigation toggle (mobile)
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+
+    // Close nav on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+
+    // Sticky nav shadow on scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox || e.target === lightboxClose) {
+        closeLightbox();
+      }
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>
