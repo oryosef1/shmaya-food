@@ -50,6 +50,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-restoration: manual;
     }
 
     body {
@@ -1200,6 +1201,12 @@
   </div>
 
   <script>
+    // Scroll to top on page load/reload
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
     // Enable :active styles on iOS Safari
     document.addEventListener('touchstart', function() {}, {passive: true});
 
